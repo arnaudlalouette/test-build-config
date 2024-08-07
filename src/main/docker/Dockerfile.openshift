@@ -75,7 +75,7 @@
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
 ###
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.14 as builder
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.20 as builder
 
 ADD src ./src/.
 ADD pom.xml .
@@ -85,7 +85,7 @@ RUN mvn package -Dquarkus.package.type=legacy-jar
 RUN ls -l
 
 ###
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.14
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.20
 
 ENV LANGUAGE='en_US:en'
 
